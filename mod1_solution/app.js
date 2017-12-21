@@ -21,9 +21,11 @@
                 var items=$scope.lunchItems.split(","); 
 
                 //remove any empty item
-                angular.forEach(items, function(value, key){
-                    if(value == "")
+                angular.forEach(items, function(value, key){                    
+                    if ($scope.isNullOrEmptyOrUndefined(value) || (value.trim() == ""))
+                    {
                         items.splice(key,1);
+                    }
                 });
 
                 //check the number of items and message back                
@@ -37,7 +39,8 @@
                 else if (items.length>3){
                     $scope.returnMsg="Too much!";
                 }
-            }            
+            }  
+            console.log(items);          
         }
     }
 })();    
