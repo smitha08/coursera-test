@@ -19,28 +19,28 @@
             {
                 //spliting the entered values 
                 var items=$scope.lunchItems.split(","); 
-
-                //remove any empty item
-                angular.forEach(items, function(value, key){                    
-                    if ($scope.isNullOrEmptyOrUndefined(value) || (value.trim() == ""))
-                    {
-                        items.splice(key,1);
-                    }
+                // modified array to store only valid items
+                var itemsMod = [];
+                //remove any empty item 
+                angular.forEach(items, function(value, key){                      
+                    if (!(( items[key].trim() == [""])|| $scope.isNullOrEmptyOrUndefined(items[key])) )
+                     {
+                        itemsMod.push(items[key].trim());
+                     }
                 });
 
                 //check the number of items and message back                
-                if ($scope.isNullOrEmptyOrUndefined(items[0]))
+                if ($scope.isNullOrEmptyOrUndefined(itemsMod[0]))
                 {
                     $scope.returnMsg="Please enter data first !";
                 }
-                else if (items.length<=3){
+                else if (itemsMod.length<=3){
                     $scope.returnMsg="Enjoy!";
                 }
-                else if (items.length>3){
+                else if (itemsMod.length>3){
                     $scope.returnMsg="Too much!";
                 }
-            }  
-            console.log(items);          
+            }                                        
         }
     }
 })();    
