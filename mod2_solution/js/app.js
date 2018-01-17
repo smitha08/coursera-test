@@ -37,7 +37,7 @@
         var toBuyItems = [
             {
             name: "Milk",
-            quantity: "2 Lts"
+            quantity: "2"
           },
           {
             name: "Donuts",
@@ -45,7 +45,7 @@
           },
           {
             name: "Cookies",
-            quantity: "3 Packs"
+            quantity: "20"
           },
           {
             name: "Toys",
