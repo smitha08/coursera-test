@@ -48,8 +48,12 @@
             quantity: "3 Packs"
           },
           {
-            name: "Chocolate",
-            quantity: "5 Packets"
+            name: "Toys",
+            quantity: "5"
+          },
+          {
+            name: "Chocolates",
+            quantity: "50"
           }];
 
         var boughtItems = [];
